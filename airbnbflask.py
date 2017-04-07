@@ -2,6 +2,7 @@ import flask
 from flask import request
 from flask_cors import CORS, cross_origin
 import requests
+import re
 import json
 app = flask.Flask(__name__)
 CORS(app)
