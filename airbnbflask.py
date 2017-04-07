@@ -19,7 +19,7 @@ def result():
         listing =  request.form['listing']
         if len(listing) > 10:
             m = re.search("/rooms/(\d+)", listing)
-            listing = m.group[1]
+            listing = m.group(1)
         PREDICTOR = pd.read_pickle('model')
 
         cats = ['host_is_superhost',  'host_has_profile_pic',  'host_identity_verified',  'zipcode',  'property_type',  'room_type',\
