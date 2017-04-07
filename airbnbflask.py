@@ -17,7 +17,9 @@ def result():
     '''Gets prediction using the HTML form'''
     if flask.request.method == 'POST':
         listing =  request.form['listing']
-##        listing = request.args.get('listing','')
+        if len(listing) > 10:
+            m = re.search("/rooms/(\d+)", listing)
+            listing = m.group[1]
         PREDICTOR = pd.read_pickle('model')
 
         cats = ['host_is_superhost',  'host_has_profile_pic',  'host_identity_verified',  'zipcode',  'property_type',  'room_type',\
